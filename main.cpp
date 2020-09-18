@@ -10,18 +10,19 @@
 
 */
 
-HBITMAP hBitmap;
-
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
 
-void ShowBitmap(HWND hWnd, HBITMAP hBmp, int &offsetX, int &offsetY);
+void ShowBitmap(HWND hWnd, int &offsetX, int &offsetY);
 
-void CorrectOffset(int &offsetX, int &offsetY, RECT windowRect);
+void CorrectOffset(int &offsetX, int &offsetY, int clientWidth, int clientHeight);
 
 int offsetX = 0;
 int offsetY = 0;
 const int DELTA = 20;
+const int DELTA_PUSH = 10;
 const int SCALE = 5;
+const CHAR *const BMP_PATH = "test.bmp";
+HBITMAP hBitmap;
 bool isLeftButtonDown = false;
 
 int APIENTRY WinMain(HINSTANCE hInstance,
@@ -45,8 +46,8 @@ int APIENTRY WinMain(HINSTANCE hInstance,
     wcex.lpszClassName = "SomeWindowClass";
     wcex.hIconSm = wcex.hIcon;
 
-
     RegisterClassEx(&wcex);
+
 
     hWnd = CreateWindow("SomeWindowClass", "Some Window",
                         WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, 0,
@@ -68,10 +69,10 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message,
                          WPARAM wParam, LPARAM lParam) {
     switch (message) {
         case WM_CREATE:
-            hBitmap = (HBITMAP) LoadImageA(NULL, (LPCSTR) ("test.bmp"), IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE);
+            hBitmap = (HBITMAP) LoadImageA(NULL, (LPCSTR) BMP_PATH, IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE);
             break;
         case WM_PAINT:
-            ShowBitmap(hWnd, hBitmap, offsetX, offsetY);
+            ShowBitmap(hWnd, offsetX, offsetY);
             break;
         case WM_KEYDOWN:
             switch (wParam) {
@@ -132,6 +133,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message,
                 offsetY = HIWORD(lParam);
                 InvalidateRect(hWnd, NULL, TRUE);
             }
+            break;
         case WM_SIZE:
             InvalidateRect(hWnd, NULL, TRUE);
             break;
@@ -144,37 +146,45 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message,
     return 0;
 }
 
-void ShowBitmap(HWND hWnd, HBITMAP hBmp, int &offsetX, int &offsetY) {
-    PAINTSTRUCT paintStruct;
+void ShowBitmap(HWND hWnd, int &offsetX, int &offsetY) {
 
     BITMAP bitmap;
-    HDC winDC = BeginPaint(hWnd, &paintStruct);
+
     GetObject(hBitmap, sizeof(bitmap), &bitmap);
+
+    HDC winDC = GetDC(hWnd);
+
     HDC memDC = CreateCompatibleDC(winDC);
-    HBITMAP oldBmp = static_cast<HBITMAP>(SelectObject(memDC, hBmp));
-    RECT windowRect = {0};
-    GetWindowRect(hWnd, &windowRect);
-    CorrectOffset(offsetX, offsetY, windowRect);
+
+    HBITMAP oldBmp = (HBITMAP) SelectObject(memDC, hBitmap);
+
+    RECT clientRect;
+    GetClientRect(hWnd, &clientRect);
+    int clientWidth = clientRect.right - clientRect.left;
+    int clientHeight = clientRect.bottom - clientRect.top;
+
+    CorrectOffset(offsetX, offsetY, clientWidth, clientHeight);
     StretchBlt(winDC, offsetX, offsetY,
-               (windowRect.right - windowRect.left) / SCALE,
-               (windowRect.bottom - windowRect.top) / SCALE,
+               clientWidth / SCALE,clientHeight / SCALE,
                memDC, 0, 0,
                bitmap.bmWidth, bitmap.bmHeight, SRCCOPY);
     SelectObject(memDC, oldBmp);
+
     DeleteDC(memDC);
-    EndPaint(hWnd, &paintStruct);
+
+    ReleaseDC(hWnd, winDC);
 }
 
-void CorrectOffset(int &offsetX, int &offsetY, RECT windowRect) {
+void CorrectOffset(int &offsetX, int &offsetY, int clientWidth, int clientHeight) {
     if (offsetX < 0) {
-        offsetX = DELTA;
-    } else if (offsetX + (windowRect.right - windowRect.left) / SCALE > (windowRect.right - windowRect.left)) {
-        offsetX = (windowRect.right - windowRect.left) - DELTA - (windowRect.right - windowRect.left) / SCALE;
+        offsetX = DELTA + DELTA_PUSH;
+    } else if (offsetX + clientWidth / SCALE > clientWidth) {
+        offsetX = clientWidth - DELTA - DELTA_PUSH - clientWidth / SCALE;
     }
     if (offsetY < 0) {
-        offsetY = DELTA;
-    } else if (offsetY + (windowRect.bottom - windowRect.top) / SCALE > (windowRect.bottom - windowRect.top)) {
-        offsetY = (windowRect.bottom - windowRect.top) - DELTA - (windowRect.bottom - windowRect.top) / SCALE;
+        offsetY = DELTA + DELTA_PUSH;
+    } else if (offsetY + clientHeight / SCALE > clientHeight) {
+        offsetY = clientHeight - DELTA - DELTA_PUSH - clientHeight / SCALE;
     }
 }
 

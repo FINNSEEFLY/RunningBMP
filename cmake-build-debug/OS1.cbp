@@ -8,18 +8,18 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="D:/Projects C++/OS1/cmake-build-debug"/>
+				<Option working_dir="D:/Projects C++/RunningBMP/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="D:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/Projects C++/OS1/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="D:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/Projects C++/OS1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/Projects C++/OS1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/Projects C++/OS1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/Projects C++/RunningBMP/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="D:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/Projects C++/RunningBMP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/Projects C++/RunningBMP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/Projects C++/RunningBMP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="OS1">
-				<Option output="D:/Projects C++/OS1/cmake-build-debug/OS1.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/Projects C++/OS1/cmake-build-debug"/>
+				<Option output="D:/Projects C++/RunningBMP/cmake-build-debug/OS1.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Projects C++/RunningBMP/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -32,15 +32,15 @@
 					<Add directory="D:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="D:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/Projects C++/OS1/cmake-build-debug/Makefile&quot;  VERBOSE=1 OS1"/>
-					<CompileFile command="D:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/Projects C++/OS1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/Projects C++/OS1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/Projects C++/OS1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/Projects C++/RunningBMP/cmake-build-debug/Makefile&quot;  VERBOSE=1 OS1"/>
+					<CompileFile command="D:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/Projects C++/RunningBMP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/Projects C++/RunningBMP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/Projects C++/RunningBMP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="OS1/fast">
-				<Option output="D:/Projects C++/OS1/cmake-build-debug/OS1.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/Projects C++/OS1/cmake-build-debug"/>
+				<Option output="D:/Projects C++/RunningBMP/cmake-build-debug/OS1.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Projects C++/RunningBMP/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -53,37 +53,37 @@
 					<Add directory="D:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="D:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/Projects C++/OS1/cmake-build-debug/Makefile&quot;  VERBOSE=1 OS1/fast"/>
-					<CompileFile command="D:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/Projects C++/OS1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/Projects C++/OS1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/Projects C++/OS1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/Projects C++/RunningBMP/cmake-build-debug/Makefile&quot;  VERBOSE=1 OS1/fast"/>
+					<CompileFile command="D:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/Projects C++/RunningBMP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/Projects C++/RunningBMP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/Projects C++/RunningBMP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="D:/Projects C++/OS1/cmake-build-debug"/>
+				<Option working_dir="D:/Projects C++/RunningBMP/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="D:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/Projects C++/OS1/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="D:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/Projects C++/OS1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/Projects C++/OS1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/Projects C++/OS1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/Projects C++/RunningBMP/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="D:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/Projects C++/RunningBMP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/Projects C++/RunningBMP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/Projects C++/RunningBMP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="D:/Projects C++/OS1/cmake-build-debug"/>
+				<Option working_dir="D:/Projects C++/RunningBMP/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="D:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/Projects C++/OS1/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="D:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/Projects C++/OS1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/Projects C++/OS1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/Projects C++/OS1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/Projects C++/RunningBMP/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="D:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/Projects C++/RunningBMP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/Projects C++/RunningBMP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/mingw-w64/x86_64-8.1.0-win32-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;D:/Projects C++/RunningBMP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="D:/Projects C++/OS1/main.cpp">
+		<Unit filename="D:/Projects C++/RunningBMP/main.cpp">
 			<Option target="OS1"/>
 		</Unit>
-		<Unit filename="D:/Projects C++/OS1/CMakeLists.txt">
+		<Unit filename="D:/Projects C++/RunningBMP/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
