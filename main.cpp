@@ -34,14 +34,14 @@ int APIENTRY WinMain(HINSTANCE hInstance,
     MSG msg;
 
     wcex.cbSize = sizeof(WNDCLASSEX);
-    wcex.style = CS_DBLCLKS;
+    wcex.style = CS_HREDRAW | CS_VREDRAW;
     wcex.lpfnWndProc = WndProc;
     wcex.cbClsExtra = 0;
     wcex.cbWndExtra = 0;
     wcex.hInstance = hInstance;
     wcex.hIcon = LoadIcon(NULL, IDI_APPLICATION);
     wcex.hCursor = LoadCursor(NULL, IDC_ARROW);
-    wcex.hbrBackground = (HBRUSH) (COLOR_WINDOW + 1);
+    wcex.hbrBackground = (HBRUSH) (COLOR_WINDOW);
     wcex.lpszMenuName = NULL;
     wcex.lpszClassName = "SomeWindowClass";
     wcex.hIconSm = wcex.hIcon;
@@ -139,7 +139,6 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message,
             break;
         case WM_DESTROY:
             PostQuitMessage(0);
-            break;
         default:
             return DefWindowProc(hWnd, message, wParam, lParam);
     }
@@ -153,21 +152,19 @@ void ShowBitmap(HWND hWnd, int &offsetX, int &offsetY) {
     GetObject(hBitmap, sizeof(bitmap), &bitmap);
 
     HDC winDC = GetDC(hWnd);
-
     HDC memDC = CreateCompatibleDC(winDC);
-
     HBITMAP oldBmp = (HBITMAP) SelectObject(memDC, hBitmap);
-
     RECT clientRect;
     GetClientRect(hWnd, &clientRect);
     int clientWidth = clientRect.right - clientRect.left;
     int clientHeight = clientRect.bottom - clientRect.top;
 
     CorrectOffset(offsetX, offsetY, clientWidth, clientHeight);
+    SetStretchBltMode(winDC, HALFTONE);
     StretchBlt(winDC, offsetX, offsetY,
-               clientWidth / SCALE,clientHeight / SCALE,
+               clientWidth / SCALE, clientHeight / SCALE,
                memDC, 0, 0,
-               bitmap.bmWidth, bitmap.bmHeight, SRCCOPY);
+               bitmap.bmWidth, bitmap.bmHeight, SRCAND);
     SelectObject(memDC, oldBmp);
 
     DeleteDC(memDC);
