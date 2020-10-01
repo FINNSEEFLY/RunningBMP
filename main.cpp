@@ -16,6 +16,7 @@ void ShowBitmap(HWND hWnd, int &offsetX, int &offsetY);
 
 void CorrectOffset(int &offsetX, int &offsetY, int clientWidth, int clientHeight);
 
+int wheelDelta = 0;
 int offsetX = 0;
 int offsetY = 0;
 const int DELTA = 20;
@@ -57,9 +58,9 @@ int APIENTRY WinMain(HINSTANCE hInstance,
     UpdateWindow(hWnd);
 
     while (GetMessage(&msg, NULL, 0, 0)) {
+
         TranslateMessage(&msg);
         DispatchMessage(&msg);
-        UpdateWindow(hWnd);
     }
 
     return (int) msg.wParam;
@@ -78,7 +79,6 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message,
             switch (wParam) {
                 case VK_DOWN:
                     offsetY += DELTA;
-                    UpdateWindow(hWnd);
                     InvalidateRect(hWnd, NULL, TRUE);
                     break;
                 case VK_UP:
@@ -96,7 +96,6 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message,
             }
             break;
         case WM_MOUSEWHEEL:
-            int wheelDelta;
             if (wParam & MK_SHIFT) {
                 wheelDelta += GET_WHEEL_DELTA_WPARAM(wParam);
                 for (; wheelDelta < 0; wheelDelta += WHEEL_DELTA) {
